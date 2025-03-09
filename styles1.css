@@ -1,0 +1,131 @@
+/* Gradient Background */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the whole profile */
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Profile section */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.connect{
+    background-color: #e0ebd9;
+}
+
+/* Profile image */
+.image {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+    border: 3px solid #fff;
+}
+
+/* Friends section */
+.friends {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.friends h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Each friend */
+.friend {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Friend image */
+.friend-image {
+    height: 70px;
+    width: 70px;
+    border-radius: 30%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+
+/* Friend info */
+.friend-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.friend-info p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .image {
+        margin-right: 0;
+        margin-bottom: 10px;
+        height: 80px;
+        width: 80px;
+    }
+
+    .friend {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .friend-image {
+        margin-right: 0;
+        margin-bottom: 5px;
+        height: 40px;
+        width: 40px;
+    }
+}

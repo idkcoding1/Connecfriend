@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Connect</title>
+    <link rel="stylesheet" href="stylesfeed.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="feed.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo">
+                <a href="">
+                    <img src="/assignment1/images/logo.png"  alt=""> 
+                </a>
+            </div>
+            <div>
+                <h2><i style="color: blue;">Connect with Homies not Friends</i></h2>
+            </div>
+            <div class="user-menu">
+                <img src="/assignment1/images/me.jpg" alt="Profile" class="profile-img" id="current-user-img">
+                <span id="current-user-name">Tanveer</span>
+                <i class="fas fa-caret-down"></i>
+                <div class="dropdown-menu">
+                    <a href="/assignment1/profile.html"><i class="fas fa-user"></i> Profile</a>
+                    <a href=""><i class="fas fa-cog"></i> Settings</a>
+                    <a href="/assignment1/login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- Left Sidebar: Friends List -->
+            <div class="sidebar friends-sidebar">
+                <h2>Online Friends</h2>
+                <div class="friends-list" id="friends-list">
+                    <!-- Friends will be loaded dynamically here -->
+                </div>
+                <button class="add-friend-btn"><i class="fas fa-user-plus"></i> Add Friend</button>
+                
+                <!-- Add Friend Modal -->
+                <div id="add-friend-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Send Friend Request</h2>
+                        <input type="text" id="friend-search" placeholder="Search for users...">
+                        <div id="search-results">
+                            <!-- Search results will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center: News Feed -->
+            <div class="news-feed">
+                <div class="post-creator">
+                    <img src="/assignment1/images/me.jpg" alt="Profile" class="profile-img">
+                    <span>Tanveer</span>
+                    <textarea placeholder="What's on your mind?"></textarea>
+                    <div class="post-actions">
+                        <button id="share-options-btn"><i class="fas fa-users"></i> Share with</button>
+                        <div id="share-options" class="share-dropdown">
+                            <label><input type="radio" name="share-option" value="all" checked> All Friends</label>
+                            <label><input type="radio" name="share-option" value="select"> Select Friends</label>
+                            <div id="select-friends" class="hidden">
+                                <!-- Friends checkboxes will be loaded here -->
+                            </div>
+                        </div>
+                        <button class="post-btn">Post</button>
+                    </div>
+                </div>
+
+                <div class="feed-posts" id="feed-posts">
+                    <!-- News feed posts will be loaded dynamically here -->
+                </div>
+            </div>
+
+            <!-- Right Sidebar: Messages -->
+            <div class="sidebar messages-sidebar">
+                <h2>Messages</h2>
+                <div class="message-list" id="message-list">
+                    <!-- Message previews will be loaded dynamically here -->
+                </div>
+                
+                <!-- Message Modal -->
+                <div id="message-modal" class="modal">
+                    <div class="modal-content message-modal-content">
+                        <span class="close">&times;</span>
+                        <div class="message-header">
+                            <img src="/api/placeholder/40/40" alt="Profile" class="profile-img" id="message-user-img">
+                            <h3 id="message-user-name">Friend Name</h3>
+                        </div>
+                        <div class="message-history" id="message-history">
+                            <!-- Message history will be loaded here -->
+                        </div>
+                        <div class="message-input">
+                            <textarea placeholder="Type a message..."></textarea>
+                            <button><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="new-message-btn"><i class="fas fa-pen"></i> New Message</button>
+                
+                <!-- New Message Modal -->
+                <div id="new-message-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>New Message</h2>
+                        <input type="text" id="message-search" placeholder="Search for users...">
+                        <div id="message-search-results">
+                            <!-- Search results will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Friend Rating Modal -->
+        <div id="rating-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Rate Friend: <span id="friend-to-rate">Friend Name</span></h2>
+                <div class="rating-options">
+                    <div class="rating-option" data-rating="1">
+                        <i class="fas fa-thumbs-down"></i>
+                        <span>Stupid</span>
+                    </div>
+                    <div class="rating-option" data-rating="2">
+                        <i class="fas fa-smile"></i>
+                        <span>Cool</span>
+                    </div>
+                    <div class="rating-option" data-rating="3">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Trustworthy</span>
+                    </div>
+                </div>
+                <button id="submit-rating">Submit Rating</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
